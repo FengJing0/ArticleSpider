@@ -13,7 +13,7 @@ class JobboleSpider(scrapy.Spider):
         # re_selector3 = response.xpath('//div[@class="entry-header"]/h1')
         title = response.xpath('//div[@class="entry-header"]/h1/text()').extract()[0]
         create_date =  response.xpath("//p[@class='entry-meta-hide-on-mobile']/text()").extract()[0].strip().replace("·","").strip()
-        fav_nums = response.xpath("//span[contains(@class,'bookmark-btn)]/text()").extract()[0]
+        fav_nums = response.xpath("//span[contains(@class,'bookmark-btn')]/text()").extract()[0]
         match_re = re.match(".*(\d+).*",fav_nums)
         if match_re:
             fav_nums = match_re.group(1)
