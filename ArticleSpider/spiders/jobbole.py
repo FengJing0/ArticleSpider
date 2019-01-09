@@ -21,9 +21,9 @@ class JobboleSpider(scrapy.Spider):
             yield Request(url=parse.urljoin(response.url, post_url), meta={"front_image_url":image_url},callback=self.parse_defail)
 
         # 提取下一页
-        next_urls = response.css('.next.page-numbers::attr(href)').extract_first('')
-        if next_urls:
-            yield Request(url=parse.urljoin(response.url, next_urls), callback=self.parse)
+        # next_urls = response.css('.next.page-numbers::attr(href)').extract_first('')
+        # if next_urls:
+        #     yield Request(url=parse.urljoin(response.url, next_urls), callback=self.parse)
 
     def parse_defail(self, response):
         article_item = JobBoleArticleItem()
