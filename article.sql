@@ -18,8 +18,8 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for article
 -- ----------------------------
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE `article` (
+DROP TABLE IF EXISTS `jobble_article`;
+CREATE TABLE `jobble_article` (
   `title` varchar(255) NOT NULL,
   `create_date` date DEFAULT NULL,
   `url` varchar(300) NOT NULL,
@@ -31,6 +31,6 @@ CREATE TABLE `article` (
   `comment_nums` int(11) NOT NULL DEFAULT '0',
   `tags` varchar(255) DEFAULT NULL,
   `author` varchar(255) DEFAULT NULL,
-  `content` longtext,
+  `content` longtext NOT NULL,
   PRIMARY KEY (`url_object_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
