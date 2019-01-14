@@ -10,7 +10,7 @@ import re
 
 import scrapy
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import MapCompose, TakeFirst,Join
+from scrapy.loader.processors import MapCompose, TakeFirst, Join
 
 
 class ArticlespiderItem(scrapy.Item):
@@ -46,6 +46,7 @@ class ArticleItemLoader(ItemLoader):
     default_output_processor = TakeFirst()
     pass
 
+
 class JobBoleArticleItem(scrapy.Item):
     title = scrapy.Field()
     create_date = scrapy.Field(
@@ -73,3 +74,22 @@ class JobBoleArticleItem(scrapy.Item):
     author = scrapy.Field(
         input_processor=MapCompose(get_author)
     )
+
+
+class LagouJob(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
+    url_object_id = scrapy.Field()
+    salary = scrapy.Field()
+    job_city = scrapy.Field()
+    work_years = scrapy.Field()
+    degree_need = scrapy.Field()
+    job_type = scrapy.Field()
+    publish_time = scrapy.Field()
+    job_advantage = scrapy.Field()
+    job_desc = scrapy.Field()
+    job_addr = scrapy.Field()
+    company_name = scrapy.Field()
+    company_url = scrapy.Field()
+    tags = scrapy.Field()
+    crawl_time = scrapy.Field()
